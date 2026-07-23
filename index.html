@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sorpresa: Login</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23631878'%3E%3Cpath d='M20 7h-3.17A3 3 0 1 0 12 4.83 3 3 0 1 0 7.17 7H4v4h16V7zM4 13v6a2 2 0 0 0 2 2h5v-8H4zm9 0v8h5a2 2 0 0 0 2-2v-6h-7z'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="stylelogin.css">
+</head>
+<body>
+
+	<svg style="display:none">
+	<symbol id="icon-corazon" viewBox="0 0 24 24">
+		<path d="M12 21s-6.716-4.35-9.428-8.06C.6 10.02 1.2 6.6 4.2 5.1c2.4-1.2 5 .1 6.3 2.1.5.7.9 1.4 1.5 1.9.6-.5 1-1.2 1.5-1.9 1.3-2 3.9-3.3 6.3-2.1 3 1.5 3.6 4.92 1.63 7.84C18.72 16.65 12 21 12 21z"/>
+	</symbol>
+</svg>
+
+<div class="container-1">
+
+	<div class="rectangle-27">
+		<span class="paragraph-33" id="fecha"></span>
+	</div>
+
+	<div class="login-card">
+		<p class="fecha-amistad">- 20/07/2026 -</p>
+		<h1 class="header-2">¡¡FELIZ DÍA DE LA AMISTAD!!</h1>
+		<p class="subtitulo">cargando tu regalo...</p>
+
+		<p class="paragraph-13">Escribí tu nombre y contraseña asignada:</p>
+
+		<form class="container-2" id="login-form">
+			<input class="text-input-1" type="text" name="nombre" placeholder="Ej: Agustina" autofocus required>
+			<input class="text-input-2" type="password" name="clave" placeholder="Ej: Wazaa111" autocomplete="off" required>
+			<button class="button-2" type="submit">Abrir regalo</button>
+			<p class="error-msg" id="error-msg"></p>
+		</form>
+	</div>
+
+	<div class="hearts-row">
+		<svg class="favorite-icon"><use href="#icon-corazon"/></svg>
+		<svg class="favorite-icon"><use href="#icon-corazon"/></svg>
+		<svg class="favorite-icon"><use href="#icon-corazon"/></svg>
+	</div>
+
+	<div class="spinner-overlay" id="spinner-overlay">
+		<div class="spinner"></div>
+		<span class="spinner-texto">Abriendo tu regalo...</span>
+	</div>
+
+</div>
+
+<script>
+	// ─────────────────────────────────────────────────────────
+	// LISTA DE AMIGOS Y CONTRA
+	// clave = nombre en minúsculas, sin acentos ni espacios de más.
+	// display = cómo se muestra el nombre en la dedicatoria.
+	// ─────────────────────────────────────────────────────────
+	const USERS = {
+		pablo:    { password: "Flama69",            display: "Pablo, mi bro" },
+		caro:     { password: "MiAmor123",          display: "Carolina, mi esposa" },
+		lucas:    { password: "676767",             display: "Culas DonDona" },
+		maxi:     { password: ":P",                 display: "Máximo Amoniáco" },
+		julian:   { password: "QueMandaChat",       display: "Shulian Patrón" },
+		ismael:   { password: "ChessYFalopa",       display: "Ismael" },
+		nicolas:  { password: "AguanteBoquitaPa",   display: "Nicolás petit" },
+		daneri:   { password: "quieroqueque",       display: "Thiago Danegri" },
+		armengol: { password: "SoyReGay",           display: "Thiago ArmenGol" },
+		valeria:  { password: "ValentinaAhre",      display: "Valuuuu" },
+		kamil:    { password: "ChocolateMilka",     display: "Milka" },
+		cabros:   { password: "Wachin",             display: "Los Cabros" },
+	};
+
+	const TIEMPO_SPINNER_MS = 1200;
+
+	// muestra la fecha hoy
+	function mostrarFechaHoy() {
+		const hoy = new Date();
+		const dd = String(hoy.getDate()).padStart(2, '0');
+		const mm = String(hoy.getMonth() + 1).padStart(2, '0');
+		document.getElementById('fecha').textContent = `${dd}/${mm}/${hoy.getFullYear()}`;
+	}
+
+	// normaliza texto y comparaencasa ahre
+	function normalizar(texto) {
+		return texto
+			.trim()
+			.toLowerCase()
+			.normalize('NFD')
+			.replace(/[\u0300-\u036f]/g, '');
+	}
+
+	function manejarLogin(e) {
+		e.preventDefault();
+
+		const idUsuario = normalizar(this.nombre.value);
+		const usuario = USERS[idUsuario];
+		const claveIngresada = this.clave.value.trim();
+		const errorMsg = document.getElementById('error-msg');
+
+		if (!usuario || usuario.password !== claveIngresada) {
+			errorMsg.textContent = 'Ta mal pero no tan mal, escribí bien, gil.';
+			return;
+		}
+
+		// "id" es la clave y se usa en index.html para
+		// mostrar el texto y la foto personalizados de c/u.
+		sessionStorage.setItem('nombreInvitado', usuario.display);
+		sessionStorage.setItem('idInvitado', idUsuario);
+		document.getElementById('spinner-overlay').classList.add('activo');
+
+		setTimeout(() => {
+			window.location.replace(`index.html?id=${idUsuario}&nombre=${encodeURIComponent(usuario.display)}`);
+		}, TIEMPO_SPINNER_MS);
+	}
+
+	mostrarFechaHoy();
+	document.getElementById('login-form').addEventListener('submit', manejarLogin);
+</script>
+
+</body>
+</html>

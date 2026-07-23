@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tu regalo</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23631878'%3E%3Cpath d='M20 7h-3.17A3 3 0 1 0 12 4.83 3 3 0 1 0 7.17 7H4v4h16V7zM4 13v6a2 2 0 0 0 2 2h5v-8H4zm9 0v8h5a2 2 0 0 0 2-2v-6h-7z'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<svg style="display:none">
+	<symbol id="icon-corazon" viewBox="0 0 24 24">
+		<path d="M12 21s-6.716-4.35-9.428-8.06C.6 10.02 1.2 6.6 4.2 5.1c2.4-1.2 5 .1 6.3 2.1.5.7.9 1.4 1.5 1.9.6-.5 1-1.2 1.5-1.9 1.3-2 3.9-3.3 6.3-2.1 3 1.5 3.6 4.92 1.63 7.84C18.72 16.65 12 21 12 21z"/>
+	</symbol>
+</svg>
+
+<div class="marco-blanco">
+<div class="page">
+
+	<div class="rectangle-27">
+		<span class="paragraph-33" id="fecha"></span>
+	</div>
+
+	<div class="hearts-row">
+		<svg class="favorite-icon"><use href="#icon-corazon"/></svg>
+		<svg class="favorite-icon"><use href="#icon-corazon"/></svg>
+		<svg class="favorite-icon"><use href="#icon-corazon"/></svg>
+	</div>
+
+	<div class="dedicatoria" id="sec-dedicatoria">
+		<p class="header-2">
+			<span class="para-label">Para:</span>
+			<span class="desti" id="destinatario"></span>
+		</p>
+		<p class="con-carino">Con cariño, de Agus.</p>
+	</div>
+
+	<div class="rectangle-divider divisor-fuerte"></div>
+
+	<div class="container-5-row" id="sec-cards">
+		<div class="card">
+			<div class="image-placeholder" id="foto-1"></div>
+			<h3 class="card-titulo" id="titulo-1"></h3>
+			<p class="card-texto" id="texto-1"></p>
+		</div>
+		<div class="card">
+			<div class="image-placeholder" id="foto-2"></div>
+			<h3 class="card-titulo" id="titulo-2"></h3>
+			<p class="card-texto" id="texto-2"></p>
+		</div>
+		<div class="card">
+			<div class="image-placeholder" id="foto-3"></div>
+			<h3 class="card-titulo" id="titulo-3"></h3>
+		</div>
+		<div class="card">
+			<div class="image-placeholder" id="foto-4"></div>
+			<h3 class="card-titulo" id="titulo-4"></h3>
+		</div>
+		<div class="card">
+			<div class="image-placeholder" id="foto-5"></div>
+			<h3 class="card-titulo" id="titulo-5"></h3>
+		</div>
+		<div class="card">
+			<div class="image-placeholder" id="foto-6"></div>
+			<h3 class="card-titulo" id="titulo-6"></h3>
+		</div>
+	</div>
+
+	<div class="rectangle-divider"></div>
+
+	<div class="container-2" id="sec-detalles">
+		<h3 class="header-10">:D</h3>
+		<p class="paragraph-21">Conclusión ahree </p>
+
+		<div class="features-row">
+			<div class="feature">
+				<div class="feature-circulo">
+					<svg class="feature-icono" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-16 0 8 8 0 0 1 16 0zM9 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm6 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM8 14s1.5 2 4 2 4-2 4-2"/></svg>
+				</div>
+				<p class="feature-label" id="detalle-1"></p>
+			</div>
+			<div class="feature">
+				<div class="feature-circulo">
+					<svg class="feature-icono" viewBox="0 0 24 24"><path d="M12 3c.6 2.4 1.7 4.1 3.3 5.1 1.6 1 3.5 1.4 5.7 1.4-2.2.4-4 1.1-5.4 2.4-1.4 1.3-2.4 3.1-2.9 5.5-.5-2.4-1.5-4.2-2.9-5.5-1.4-1.3-3.2-2-5.4-2.4 2.2 0 4.1-.4 5.7-1.4C10.3 7.1 11.4 5.4 12 3z"/></svg>
+				</div>
+				<p class="feature-label" id="detalle-2"></p>
+			</div>
+			<div class="feature">
+				<div class="feature-circulo">
+					<svg class="feature-icono" viewBox="0 0 24 24"><path d="M20 7h-3.17A3 3 0 1 0 12 4.83 3 3 0 1 0 7.17 7H4v4h16V7zM4 13v6a2 2 0 0 0 2 2h5v-8H4zm9 0v8h5a2 2 0 0 0 2-2v-6h-7z"/></svg>
+				</div>
+				<p class="feature-label" id="detalle-3"></p>
+			</div>
+		</div>
+	</div>
+
+</div>
+</div>
+
+<div class="dots" id="dots"></div>
+
+<a href="inicio.html" class="home-link">
+	<svg class="home-icon" viewBox="0 0 24 24" fill="currentColor">
+		<path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+	</svg>
+	<span>Ir al Inicio</span>
+</a>
+
+<script>
+	// invitados: id = clave usada en USERS (inicio.html), display = texto de "Para:"
+	const DEFAULT = {
+		titulo1: "Un montón de cosas lindas", texto1: "Escribí acá la primera dedicatoria.", foto1: "",
+		titulo2: "Y un poco más", texto2: "Escribí acá la segunda dedicatoria.", foto2: "",
+		detalle1: "Escribí acá la viñeta 1.", detalle2: "Escribí acá la viñeta 2.", detalle3: "Escribí acá la viñeta 3.",
+	};
+
+	const CONTENIDOS = {
+		pablo:    { titulo1: "LOS QUIERO UN MONTÓN HDP", texto1: "Escribí acá la dedicatoria para Pablo.", foto1: "img/cabros/all.jpeg", titulo2: "Y van muchos años más", texto2: "Escribí acá la segunda parte.", foto2: "", detalle1: "Escribí acá la viñeta 1 de Pablo.", detalle2: "Escribí acá la viñeta 2 de Pablo.", detalle3: "Escribí acá la viñeta 3 de Pablo." },
+		caro:     { ...DEFAULT },
+		lucas:    { ...DEFAULT },
+		maxi:     { ...DEFAULT },
+		julian:   { ...DEFAULT },
+		ismael:   { ...DEFAULT },
+		nicolas:  { ...DEFAULT },
+		daneri:   { ...DEFAULT },
+		armengol: { ...DEFAULT },
+		valeria:  { ...DEFAULT },
+		cabros:   { titulo1: "LOS  QUIERO UN MONTÓN CABROS", texto1: "Fuera de joda, me alega tenerlos a todos ustedes como amigos, son muy buena compañía, son chistosos, son auténticos y un muy lindo grupo. Son todos diferentes y tienen sus particularidades, como algunos más tranquilos otros más bulliciosos, otros más enojones o los timberos que juegan al Poker conmigo JAJA", foto1: "img/cabros/all.jpg" , titulo2: "Feliz Día del Amigo", texto2: " Los valoro mucho, gracias por todas las sonrisas que me sacan con sus giladas sobretodo cuando estoy mal. 		Posdata: Sorry por hacerlos esperar x su regalo (sorpresa), seguro me voy a atrasar en terminar y mostrarles esto. :)", foto2: "img/cabros/all2.jpg", detalle1: "Los quiero geis", detalle2: "Gracias X todo", detalle3: "Nunca dejen de ser geis", foto3: "img/cabros/all3.jpg", foto4: "img/cabros/all4.jpg", foto5: "img/cabros/all5.jpg", foto6: "img/cabros/all6.jpg" },
+	};
+
+	function mostrarFechaHoy() {
+		const hoy = new Date();
+		const dd = String(hoy.getDate()).padStart(2, '0');
+		const mm = String(hoy.getMonth() + 1).padStart(2, '0');
+		document.getElementById('fecha').textContent = `${dd}/${mm}/${hoy.getFullYear()}`;
+	}
+
+	function mostrarContenidoInvitado() {
+		const params = new URLSearchParams(window.location.search);
+		const id = sessionStorage.getItem('idInvitado') || params.get('id') || '';
+		const nombre = sessionStorage.getItem('nombreInvitado') || params.get('nombre');
+		if (nombre) document.getElementById('destinatario').textContent = nombre;
+
+		const c = CONTENIDOS[id] || DEFAULT;
+		document.getElementById('titulo-1').textContent = c.titulo1;
+		document.getElementById('texto-1').textContent = c.texto1;
+		document.getElementById('titulo-2').textContent = c.titulo2;
+		document.getElementById('texto-2').textContent = c.texto2;
+		if (c.foto1) document.getElementById('foto-1').style.backgroundImage = `url('${c.foto1}')`;
+		if (c.foto2) document.getElementById('foto-2').style.backgroundImage = `url('${c.foto2}')`;
+		if (c.foto3) document.getElementById('foto-3').style.backgroundImage = `url('${c.foto3}')`;
+		if (c.foto4) document.getElementById('foto-4').style.backgroundImage = `url('${c.foto4}')`;
+		if (c.foto5) document.getElementById('foto-5').style.backgroundImage = `url('${c.foto5}')`;
+		if (c.foto6) document.getElementById('foto-6').style.backgroundImage = `url('${c.foto6}')`;
+
+
+
+		document.getElementById('detalle-1').textContent = c.detalle1;
+		document.getElementById('detalle-2').textContent = c.detalle2;
+		document.getElementById('detalle-3').textContent = c.detalle3;
+	}
+
+	// dots fijos de navegación: uno por sección (dedicatoria, tarjetas, detalles)
+	function iniciarDots() {
+		const secciones = ['sec-dedicatoria', 'sec-cards', 'sec-detalles'].map(id => document.getElementById(id));
+		const dotsContainer = document.getElementById('dots');
+
+		const dots = secciones.map((seccion, i) => {
+			const dot = document.createElement('div');
+			dot.className = i === 0 ? 'circle-12' : 'circle-dot';
+			dot.addEventListener('click', () => seccion.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+			dotsContainer.appendChild(dot);
+			return dot;
+		});
+
+		function actualizarDotActivo() {
+			const centro = window.scrollY + window.innerHeight / 2;
+			const activo = secciones.reduce((masCercano, seccion, i) => {
+				const distancia = Math.abs(seccion.offsetTop + seccion.offsetHeight / 2 - centro);
+				const distanciaActual = Math.abs(secciones[masCercano].offsetTop + secciones[masCercano].offsetHeight / 2 - centro);
+				return distancia < distanciaActual ? i : masCercano;
+			}, 0);
+			dots.forEach((dot, i) => dot.className = i === activo ? 'circle-12' : 'circle-dot');
+		}
+
+		let scrollTimeout;
+		window.addEventListener('scroll', () => {
+			clearTimeout(scrollTimeout);
+			scrollTimeout = setTimeout(actualizarDotActivo, 50);
+		});
+		actualizarDotActivo();
+	}
+
+	mostrarFechaHoy();
+	mostrarContenidoInvitado();
+	iniciarDots();
+</script>
+
+</body>
+</html>
